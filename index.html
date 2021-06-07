@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>All in One Player</title>
+		<link rel="stylesheet" href="./css/style.css	" />
+		<link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+			integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="topBar">
+				<div id="title"></div>
+				<!-- <div class="search">
+					
+				</div> -->
+				<input
+					type="text"
+					id="searchInput"
+					name="search"
+					placeholder="Enter URL.."
+					autocomplete="off"
+				/>
+				<div id="search-result" class="hideControl">
+					<div class="loader-search"></div>
+				</div>
+			</div>
+			<div class="videoPlayer">
+				<video id="player"></video>
+				<audio id="audioPlayer"></audio>
+			</div>
+
+			<div class="loader hide"></div>
+			<div class="video-controls">
+				<div class="back-10-sec"><i class="fas fa-backward"></i></div>
+
+				<div class="play-pause-btn"><i class="fas fa-play"></i></div>
+
+				<div class="forward-10-sec"><i class="fas fa-forward"></i></div>
+			</div>
+			<div class="bottom-bar">
+				<div class="position-slider">
+					<input type="range" id="video-position" value="0" />
+				</div>
+				<div class="details-bar">
+					<div class="left-section">
+						<div id="timer"></div>
+					</div>
+					<div class="right-section">
+						<div class="volume">
+							<input type="range" class="hideControl" id="volume-slider" />
+							<div class="volume-btn">
+								<i class="fas fa-volume-up"> </i>
+							</div>
+						</div>
+						<div class="formats-select">
+							<select id="formats">
+								<option value="NA">NA</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="./js/script.js"></script>
+	<script src="./js/players.js"></script>
+	<script src="./js/util.js"></script>
+	<script src="./js/volume.js"></script>
+	<script src="./js/formats.js"></script>
+	<script src="./js/seachBar.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</html>
