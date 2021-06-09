@@ -34,9 +34,17 @@ searchInput.onblur = function () {
 };
 
 async function directVideo(val) {
-	res = await axios.post("http://localhost:3000/api/getVideo", {
-		url: val,
-	});
+	// !! localhost
+	// res = await axios.post("http://localhost:3000/api/getVideo", {
+	// 	url: val,
+	// });
+	// !! server
+	res = await axios.post(
+		"https://video-player-js-api.herokuapp.com/api/getVideo",
+		{
+			url: val,
+		}
+	);
 	console.log(val);
 	console.log(res.data);
 
@@ -53,10 +61,18 @@ async function youtubeSearch(val) {
 	searchRes.classList.remove("hideControl");
 	let l = searchRes.querySelector(".loader-search");
 	l.classList.remove("hideControl");
+	// !! for testing
+	// res = await axios.post("http://localhost:3000/api/search", {
+	// 	str: val,
+	// });
+	// !! Server
+	res = await axios.post(
+		"https://video-player-js-api.herokuapp.com/api/search",
+		{
+			str: val,
+		}
+	);
 
-	res = await axios.post("http://localhost:3000/api/search", {
-		str: val,
-	});
 	console.log(res);
 	if (res.data.length == 0) {
 		searchRes.innerHTML = `<p> No data found !</p>`;
@@ -75,10 +91,17 @@ async function addMoreResult(e) {
 
 	e.target.innerHTML = `<div class="loader-search"></div>`;
 	e.target.style.height = "40px";
-
-	let moreRes = await axios.post("http://localhost:3000/api/load", {
-		str: searchInput.value,
-	});
+	// !! localhost for testing
+	// let moreRes = await axios.post("http://localhost:3000/api/load", {
+	// 	str: searchInput.value,
+	// });
+	// !! server
+	let moreRes = await axios.post(
+		"https://video-player-js-api.herokuapp.com/api/load",
+		{
+			str: searchInput.value,
+		}
+	);
 	console.log(moreRes);
 	if (moreRes.data.length != 0) {
 		e.target.remove();

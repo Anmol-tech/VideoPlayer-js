@@ -1,12 +1,20 @@
 let axios = require("axios");
 let fs = require("fs");
-
+let youtube = require("youtube-dl-exec");
 const util = require("util");
 const exec = util.promisify(require("child_process").exec);
 
-const url = "hello world";
-(function () {
-	console.log(useRegex(url));
+const url = "https://www.youtube.com/watch?v=o54aKk5LZdM";
+(async function () {
+	let video = await youtube(url, {
+		dumpSingleJson: true,
+		noWarnings: true,
+		noCallHome: true,
+		noCheckCertificate: true,
+		preferFreeFormats: true,
+		youtubeSkipDashManifest: true,
+	});
+	console.log(video);
 })();
 
 function useRegex(input) {
