@@ -47,6 +47,7 @@ async function directVideo(val) {
 	);
 
 	videoObj = res.data;
+	ctime = 0;
 	searchInput.value = "";
 	searchInput.blur();
 	formatFormats();
