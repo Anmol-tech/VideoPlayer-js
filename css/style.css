@@ -80,6 +80,7 @@ video {
 	width: 300px;
 	height: 70px;
 }
+
 .video-controls:hover {
 	opacity: 1;
 }
@@ -98,11 +99,11 @@ video {
 #timer {
 	display: flex;
 	font-size: 14px;
-	justify-content: start;
-	align-items: center;
+	justify-content: end;
+	align-items: end;
 	width: 120px;
-	bottom: 15px;
-	/* position: absolute; */
+	bottom: 10px;
+	position: absolute;
 	left: 10px;
 }
 
@@ -250,7 +251,7 @@ video {
 	flex-direction: column;
 	position: absolute;
 	bottom: 10px;
-	right: 200px;
+	left: 130px;
 	transition: height 0.4s ease-in-out 0s;
 }
 
@@ -284,17 +285,20 @@ video {
 .formats-select {
 	position: absolute;
 	right: 100px;
-	bottom: 11px;
+	bottom: 10px;
 }
 
-#formats {
+#formats,
+#captions {
 	background-color: rgba(0, 0, 0, 0);
 	width: 80px;
 	outline: none;
 	border: none;
+	font-weight: bold;
 }
 
-#formats option {
+#formats option,
+#captions option {
 	background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -391,13 +395,91 @@ video {
 	width: 10px;
 	height: 100%;
 }
+
 #search-result::-webkit-scrollbar-track {
 	border-radius: 10px;
 	background-color: rgba(255, 255, 255, 0.1);
 }
+
 #search-result::-webkit-scrollbar-thumb {
 	background-image: linear-gradient(45deg, #00aeff, #a68eff);
 	border-radius: 10px;
 	-webkit-box-shadow: rgba(0, 0, 0, 0.12) 0 3px 13px 1px;
 	box-shadow: rgba(0, 0, 0, 0.12) 0 3px 13px 1px;
+}
+
+.fullscreen {
+	position: absolute;
+	bottom: 10px;
+	right: 30px;
+}
+
+.bottom-bar i:hover,
+.bottom-bar img:hover {
+	transform: scale(1.2);
+}
+
+.pip {
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 170px;
+	bottom: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.pip img {
+	width: 25px;
+	height: 25px;
+}
+
+.setting {
+	position: absolute;
+	right: 60px;
+	bottom: 10px;
+}
+
+.options-block {
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s ease-in-out 0s;
+	position: absolute;
+	width: 220px;
+	height: 100px;
+	bottom: 28px;
+	right: 0px;
+	background: rgba(0, 0, 0, 0.38);
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: start;
+}
+
+.opt {
+	padding: 5px;
+	width: 100%;
+	height: 50%;
+	/* background: rgba(0, 0, 0, 0.38); */
+	border-radius: 5px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.gear {
+	background-color: transparent;
+	outline: none;
+	border: 0;
+}
+p {
+	font-weight: 600;
+}
+
+.download {
+	position: absolute;
+	right: 200px;
+	bottom: 10px;
 }

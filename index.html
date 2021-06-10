@@ -7,6 +7,8 @@
 		<title>All in One Player</title>
 		<link rel="stylesheet" href="./css/style.css	" />
 		<link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+		<link rel="stylesheet" href="./css/toggle.css" />
+		<link rel="stylesheet" href="./css/context.css" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -23,16 +25,21 @@
 
 	<body>
 		<div class="container">
+			<div class="menu">
+				<ul class="menu-options">
+					<li class="menu-option open-file">Open File</li>
+					<li class="menu-option add-sub">Add Subtitle</li>
+				</ul>
+			</div>
 			<div class="topBar">
 				<div id="title"></div>
 				<!-- <div class="search">
-					
 				</div> -->
 				<input
 					type="text"
 					id="searchInput"
 					name="search"
-					placeholder="Enter URL.."
+					placeholder="Search OR Enter URL.."
 					autocomplete="off"
 				/>
 				<div id="search-result" class="hideControl">
@@ -59,18 +66,48 @@
 				<div class="details-bar">
 					<div class="left-section">
 						<div id="timer"></div>
-					</div>
-					<div class="right-section">
+						<div class="pip">
+							<!-- <i class="fas fa-images"></i> -->
+							<img src="./images/picture-in-picture-48.png" alt="" />
+						</div>
 						<div class="volume">
 							<input type="range" class="hideControl" id="volume-slider" />
 							<div class="volume-btn">
 								<i class="fas fa-volume-up"> </i>
 							</div>
 						</div>
+					</div>
+					<div class="right-section">
+						<div class="download">
+							<i class="fas fa-download"></i>
+						</div>
 						<div class="formats-select">
 							<select id="formats">
 								<option value="NA">NA</option>
 							</select>
+						</div>
+						<div class="fullscreen">
+							<i class="fas fa-expand"></i>
+						</div>
+						<div class="setting">
+							<div class="options-block">
+								<!-- <div class="opt">
+									<p>PIP Enable</p>
+									<div class="input_wrapper">
+										<input type="checkbox" id="pipEnable" />
+										<label for="pipEnable">Toggle</label>
+									</div>
+								</div> -->
+								<div class="opt">
+									<p>captions</p>
+									<select id="captions">
+										<option value="NA">NA</option>
+									</select>
+								</div>
+							</div>
+							<div class="gear">
+								<i class="fas fa-cog"></i>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -83,5 +120,8 @@
 	<script src="./js/volume.js"></script>
 	<script src="./js/formats.js"></script>
 	<script src="./js/seachBar.js"></script>
+	<script src="./js/fullscreen.js"></script>
+	<script src="./js/settings.js"></script>
+	<script src="./js/context.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

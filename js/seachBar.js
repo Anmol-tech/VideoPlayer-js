@@ -45,8 +45,6 @@ async function directVideo(val) {
 			url: val,
 		}
 	);
-	console.log(val);
-	console.log(res.data);
 
 	videoObj = res.data;
 	searchInput.value = "";
@@ -73,7 +71,6 @@ async function youtubeSearch(val) {
 		}
 	);
 
-	console.log(res);
 	if (res.data.length == 0) {
 		searchRes.innerHTML = `<p> No data found !</p>`;
 		return;
@@ -102,7 +99,7 @@ async function addMoreResult(e) {
 			str: searchInput.value,
 		}
 	);
-	console.log(moreRes);
+
 	if (moreRes.data.length != 0) {
 		e.target.remove();
 	} else {
@@ -134,8 +131,9 @@ function appendList(x, res) {
 			".thumbnail"
 		).style.background = `url(${res.data[x].thumbnail})`;
 		d.addEventListener("click", function () {
-			videoObj = res.data[x];
 			ctime = 0;
+
+			videoObj = res.data[x];
 			formatFormats();
 			setVideoAndAudio();
 		});

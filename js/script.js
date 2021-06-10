@@ -14,6 +14,7 @@ let tb = document.querySelector(".topBar");
 
 let isChangingVol = false;
 let isTyping = false;
+let isSettingVisible = false;
 
 let isPlaying = false;
 let isSeeking = false;
@@ -39,6 +40,8 @@ videoSlider.addEventListener("input", function () {
 
 playPauseBtn.addEventListener("click", mediaStates);
 
+
+
 document.addEventListener("keydown", (e) => {
 	if (e.key == " " && !isTyping) mediaStates();
 	// console.log(e);
@@ -47,6 +50,15 @@ document.addEventListener("keydown", (e) => {
 	}
 	if (e.key == "ArrowLeft" && !isTyping) {
 		seekBackward10sVideo();
+	}
+	if (e.key == "ArrowUp" && !isTyping) {
+		volumeUp();
+	}
+	if (e.key == "ArrowDown" && !isTyping) {
+		volumeDown();
+	}
+	if (e.key == "f" && !isTyping) {
+		handleFullScreen();
 	}
 
 	console.log(e.key);
@@ -77,7 +89,7 @@ function handleVisibility() {
 	bb.classList.remove("hideControl");
 	videoControls.classList.remove("hideControl");
 	timeout = setTimeout(function () {
-		if (isPlaying && !isChangingVol && !isTyping) {
+		if (isPlaying && !isChangingVol && !isTyping && !isSettingVisible) {
 			videoPlayer.style.cursor = "none";
 			tb.classList.add("hideControl");
 			bb.classList.add("hideControl");

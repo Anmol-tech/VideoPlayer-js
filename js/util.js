@@ -12,6 +12,7 @@ function isUrl(input) {
 }
 
 function formatFormats() {
+	
 	if (videoObj == null) return;
 
 	videoObj.validVideoFormat = {};
@@ -54,4 +55,5 @@ function setVideoAndAudio() {
 		setVideoSrc(videoObj.validVideoFormat["360p"]);
 		setCurrFormatVal("360p");
 	}
+	addCaptionsToSelector();
 }

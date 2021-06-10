@@ -42,7 +42,11 @@ videoPlayer.addEventListener("loadedmetadata", function () {
 	audioPlayer.currentTime = ctime;
 	videoPlayer.currentTime = ctime;
 	videoPlayer.step = audioPlayer.step;
-
+	if (lastCaptionIdx != -1) {
+		captions.value = "off";
+		// handleCaptions();
+	}
+	
 	// set duration
 	if (videoPlayer.duration > 3600) duration = getTime(videoPlayer.duration);
 	else duration = getTime(videoPlayer.duration).substr(3);
@@ -60,6 +64,10 @@ videoPlayer.addEventListener("ended", function () {
 	videoPlayer.currentTime = 0;
 	pauseMedia();
 });
+
+// videoPlayer.addEventListener("pause", function () {
+// 	audioPlayer.pause();
+// });
 
 videoPlayer.addEventListener("playing", function () {
 	audioPlayer.play();
@@ -110,7 +118,6 @@ function setVideoSrc(src) {
 
 function setAudioSrc(src) {
 	pauseMedia();
-
 	audioPlayer.src = src;
 	playMedia();
 	if (!isPlaying) {
