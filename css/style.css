@@ -291,7 +291,8 @@ video {
 }
 
 #formats,
-#captions {
+#captions,
+#playback-rate {
 	background-color: rgba(0, 0, 0, 0);
 	width: 80px;
 	outline: none;
@@ -300,7 +301,8 @@ video {
 }
 
 #formats option,
-#captions option {
+#captions option,
+#playback-rate option {
 	background-color: rgba(0, 0, 0, 0.7);
 }
 

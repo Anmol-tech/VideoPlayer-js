@@ -2,10 +2,13 @@ let gear = document.querySelector(".gear");
 let optBlc = document.querySelector(".options-block");
 let pipE = document.querySelector("#pipEnable");
 let captions = document.querySelector("#captions");
+let playbackRate = document.querySelector("#playback-rate");
 
 let isPIPE = localStorage.getItem("pipE");
 let showCaptions = localStorage.getItem("captions");
 let lastCaptionIdx = -1;
+
+playbackRate.value = 1;
 
 // if (isPIPE == "true") isPIPE = true;
 // else isPIPE = false;
@@ -64,7 +67,7 @@ captions.addEventListener("change", handleCaptions);
 
 function handleCaptions() {
 	let val = Number(captions.value);
-	console.log(val);
+	// console.log(val);
 	if (val >= 0) {
 		if (lastCaptionIdx != -1)
 			videoPlayer.textTracks[lastCaptionIdx].mode = "disabled";
@@ -75,6 +78,15 @@ function handleCaptions() {
 		lastCaptionIdx = -1;
 	}
 }
+
+playbackRate.addEventListener("change", handlePlaybackRate);
+
+function handlePlaybackRate() {
+	let val = Number(playbackRate.value);
+	videoPlayer.playbackRate = val;
+	audioPlayer.playbackRate = val;
+}
+
 // pipE.addEventListener("change", function () {
 // 	if (isPIPE) {
 // 		videoPlayer.autoPictureInPicture = true;

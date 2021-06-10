@@ -24,14 +24,14 @@ app.post("/api/getVideo", (req, res) => {
 });
 
 app.post("/api/search", (req, res) => {
-	console.log(req.body.str);
+	// console.log(req.body.str);
 	getData.searchYoutube(req.body.str).then(function (data) {
 		res.send(data);
 	});
 });
 
 app.post("/api/load", (req, res) => {
-	console.log(req.body.str);
+	// console.log(req.body.str);
 	getData.loadMore(req.body.str).then(function (data) {
 		res.send(data);
 	});

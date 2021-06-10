@@ -98,7 +98,7 @@ function handlePause() {
 
 function changeVideoSource(src) {
 	ctime = videoPlayer.currentTime;
-	console.log(ctime);
+	// console.log(ctime);
 	pauseMedia();
 	videoPlayer.src = src;
 	playMedia();

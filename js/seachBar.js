@@ -6,7 +6,7 @@ searchRes.classList.add("hideControl");
 searchInput.addEventListener("keypress", async function (e) {
 	let val = searchInput.value;
 	if (e.key == "Enter") {
-		console.log("Called Api");
+		// console.log("Called Api");
 
 		if (isUrl(val)) {
 			directVideo(val);
@@ -54,7 +54,7 @@ async function directVideo(val) {
 }
 
 async function youtubeSearch(val) {
-	console.log("Not url");
+	// console.log("Not url");
 	searchRes.innerHTML = `<div class="loader-search"></div>`;
 	searchRes.classList.remove("hideControl");
 	let l = searchRes.querySelector(".loader-search");

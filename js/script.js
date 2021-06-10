@@ -40,9 +40,9 @@ videoSlider.addEventListener("input", function () {
 
 playPauseBtn.addEventListener("click", mediaStates);
 
-
-
 document.addEventListener("keydown", (e) => {
+	// shortcuts
+
 	if (e.key == " " && !isTyping) mediaStates();
 	// console.log(e);
 	if (e.key == "ArrowRight" && !isTyping) {
@@ -60,8 +60,15 @@ document.addEventListener("keydown", (e) => {
 	if (e.key == "f" && !isTyping) {
 		handleFullScreen();
 	}
+	if (e.key == "m" && !isTyping) {
+		isMute = !isMute;
+		mute();
+	}
+	if (e.key == "p" && !isTyping) {
+		togglePictureInPicture();
+	}
 
-	console.log(e.key);
+	// console.log(e.key);
 });
 
 back10sBtn.addEventListener("click", seekBackward10sVideo);

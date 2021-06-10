@@ -40,7 +40,7 @@ openFile.addEventListener("click", function () {
 function loadLocalVideo(e) {
 	let file = e.path[0].files[0];
 	let url = window.URL.createObjectURL(file);
-	console.log(file);
+	// console.log(file);
 	videoObj = null;
 	videoPlayer.innerHTML = "";
 	formats.innerHTML = `<option value="NA">NA</option>`;
