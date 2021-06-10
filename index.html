@@ -28,7 +28,7 @@
 			<div class="menu">
 				<ul class="menu-options">
 					<li class="menu-option open-file">Open File</li>
-					<li class="menu-option add-sub">Add Subtitle</li>
+					<!-- <li class="menu-option add-sub">Add Subtitle</li> -->
 				</ul>
 			</div>
 			<div class="topBar">
@@ -51,7 +51,7 @@
 				<audio id="audioPlayer"></audio>
 			</div>
 
-			<div class="loader hide"></div>
+			<div class="loader"></div>
 			<div class="video-controls">
 				<div class="back-10-sec"><i class="fas fa-backward"></i></div>
 
@@ -76,11 +76,14 @@
 								<i class="fas fa-volume-up"> </i>
 							</div>
 						</div>
+						<div class="open-file-btn">
+							<i class="fas fa-file-video"></i>
+						</div>
 					</div>
 					<div class="right-section">
-						<div class="download">
+						<!-- <div class="download">
 							<i class="fas fa-download"></i>
-						</div>
+						</div> -->
 						<div class="formats-select">
 							<select id="formats">
 								<option value="NA">NA</option>
@@ -123,5 +126,6 @@
 	<script src="./js/fullscreen.js"></script>
 	<script src="./js/settings.js"></script>
 	<script src="./js/context.js"></script>
+	<script src="./js/localFile.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </html>

@@ -71,7 +71,6 @@ video {
 .video-controls {
 	display: none;
 	opacity: 0.5;
-	color: #00aeff !important;
 	transition: opacity 0.5s ease-in-out 0s;
 	justify-content: space-between;
 	font-size: 3vw;
@@ -79,9 +78,11 @@ video {
 	position: absolute;
 	width: 300px;
 	height: 70px;
+	color: #2ca2da !important;
 }
 
 .video-controls:hover {
+	color: #2ca2da !important;
 	opacity: 1;
 }
 
@@ -173,6 +174,7 @@ video {
 	width: 50px;
 	height: 50px;
 	animation: 2s linear 0s infinite normal none running spin;
+	display: none;
 }
 
 .loader-search {
@@ -339,13 +341,14 @@ video {
 
 .thumbnail {
 	height: 100%;
-	width: 30%;
-	background-size: cover !important;
+	width: 20%;
+	background-size: contain !important;
+	background-repeat: no-repeat !important;
 }
 
 .search-title {
 	height: 100%;
-	width: 70%;
+	width: 80%;
 	display: flex;
 	padding: 10px;
 	font-size: 0.6rem;
@@ -482,4 +485,9 @@ p {
 	position: absolute;
 	right: 200px;
 	bottom: 10px;
+}
+.open-file-btn {
+	left: 205px;
+	bottom: 10px;
+	position: absolute;
 }

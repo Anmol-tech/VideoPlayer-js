@@ -46,7 +46,7 @@ videoPlayer.addEventListener("loadedmetadata", function () {
 		captions.value = "off";
 		// handleCaptions();
 	}
-	
+
 	// set duration
 	if (videoPlayer.duration > 3600) duration = getTime(videoPlayer.duration);
 	else duration = getTime(videoPlayer.duration).substr(3);

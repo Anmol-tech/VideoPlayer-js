@@ -1,15 +1,10 @@
-.open-file {
-}
-
-.add-sub {
-}
-
 .menu {
 	width: 150px;
 	z-index: 1;
 	/* box-shadow: 0 4px 5px 3px rgba(0, 0, 0, 0.2); */
 	position: fixed;
 	display: none;
+	overflow: hidden;
 	transition: 0.2s display ease-in;
 }
 .menu .menu-options {

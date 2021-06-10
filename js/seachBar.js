@@ -23,7 +23,7 @@ searchInput.onfocus = function () {
 	searchRes.style.top = b.top + b.height + "px";
 	searchRes.style.right = 20 + "px";
 	searchRes.style.width = "35%";
-	searchRes.style.height = "320px";
+	searchRes.style.height = "30vh";
 
 	isTyping = true;
 };
@@ -122,7 +122,7 @@ function appendList(x, res) {
 		d.classList.add("list-view");
 		d.innerHTML = `	<div class="thumbnail"></div>
 						<div class="search-title">
-							${res.data[x].title.substring(0, 40)}...
+							${res.data[x].title}
 							<div class="channel-title">${res.data[x].channel}</div>
 						</div>
 					`;

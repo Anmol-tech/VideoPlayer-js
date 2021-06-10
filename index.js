@@ -2,8 +2,8 @@ const { app, BrowserWindow } = require("electron");
 const { starAPI } = require("./js/startAPI");
 function createWindow() {
 	const win = new BrowserWindow({
-		width: 640,
-		height: 360,
+		width: 720,
+		height: 1080,
 		minWidth: 350,
 		webPreferences: { nodeIntegration: true },
 	});
