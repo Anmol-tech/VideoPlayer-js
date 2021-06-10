@@ -25,6 +25,8 @@ let videoObj = null;
 videoPlayer.setAttribute("preload", "auto");
 videoPlayer.addEventListener("mousemove", handleVisibility);
 
+videoPlayer.addEventListener("click", mediaStates);
+
 videoPlayer.addEventListener("loadedmetadata", function () {
 	videoPlayer.muted = true;
 	videoSlider.min = 0;
