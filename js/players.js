@@ -10,8 +10,7 @@ setTimer();
 audioPlayer.addEventListener("timeupdate", function () {
 	if (!isSeeking) {
 		videoSlider.value = audioPlayer.currentTime;
-		if (duration > 3600) timeDone = getTime(videoPlayer.currentTime);
-		else timeDone = getTime(videoPlayer.currentTime).substr(3);
+		timeDone = getTime(videoPlayer.currentTime);
 		setTimer();
 	}
 });
@@ -20,16 +19,6 @@ function changeAudioPlayerSource(src) {
 	audioPlayer.src = src;
 }
 
-// !! for live video purpose Only need to implement
-// videoPlayer.addEventListener("timeupdate", function () {
-// 	if (!isSeeking) {
-// 		videoSlider.value = videoPlayer.currentTime;
-// 		if (duration > 3600) timeDone = getTime(videoPlayer.currentTime);
-// 		else timeDone = getTime(videoPlayer.currentTime).substr(3);
-// 		setTimer();
-// 	}
-// });
-
 // Video Player listeners
 
 let videoObj = null;
@@ -37,6 +26,7 @@ videoPlayer.setAttribute("preload", "auto");
 videoPlayer.addEventListener("mousemove", handleVisibility);
 
 videoPlayer.addEventListener("loadedmetadata", function () {
+	videoPlayer.muted = true;
 	videoSlider.min = 0;
 	videoSlider.max = videoPlayer.duration;
 	audioPlayer.currentTime = ctime;
@@ -48,8 +38,7 @@ videoPlayer.addEventListener("loadedmetadata", function () {
 	}
 
 	// set duration
-	if (videoPlayer.duration > 3600) duration = getTime(videoPlayer.duration);
-	else duration = getTime(videoPlayer.duration).substr(3);
+	duration = getTime(videoPlayer.duration);
 	setTimer();
 });
 

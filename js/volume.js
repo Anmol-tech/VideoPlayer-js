@@ -23,7 +23,7 @@ volumeSlider.value = cVol;
 volumeSlider.addEventListener("input", () => {
 	cVol = volumeSlider.value;
 	audioPlayer.volume = cVol / 100;
-	videoPlayer.volume = cVol / 100;
+	// videoPlayer.volume = cVol / 100;
 	isChangingVol = true;
 	handleVolumeIcon();
 	if (isMute) {
@@ -35,7 +35,7 @@ volumeSlider.addEventListener("input", () => {
 volumeSlider.addEventListener("change", () => {
 	cVol = volumeSlider.value;
 	audioPlayer.volume = cVol / 100;
-	videoPlayer.volume = cVol / 100;
+	// videoPlayer.volume = cVol / 100;
 	localStorage.setItem("volume", cVol);
 	isChangingVol = false;
 });
@@ -56,7 +56,7 @@ function volumeDown() {
 	volumeSlider.value -= 5;
 	cVol = volumeSlider.value;
 	audioPlayer.volume = cVol / 100;
-	videoPlayer.volume = cVol / 100;
+	// videoPlayer.volume = cVol / 100;
 	localStorage.setItem("volume", cVol);
 	handleVolumeIcon();
 	if (cVol > 0 && isMute) {
@@ -68,7 +68,7 @@ function volumeUp() {
 	volumeSlider.value = Number(volumeSlider.value) + 5;
 	cVol = volumeSlider.value;
 	audioPlayer.volume = cVol / 100;
-	videoPlayer.volume = cVol / 100;
+	// videoPlayer.volume = cVol / 100;
 	localStorage.setItem("volume", cVol);
 	handleVolumeIcon();
 	if (isMute) {
@@ -81,11 +81,11 @@ function mute() {
 	if (!isMute) {
 		handleVolumeIcon();
 		audioPlayer.muted = false;
-		videoPlayer.muted = false;
+		// videoPlayer.muted = false;
 	} else {
 		volumeBtn.innerHTML = `<i class="fas fa-volume-mute"> </i>`;
 		audioPlayer.muted = true;
-		videoPlayer.muted = true;
+		// videoPlayer.muted = true;
 	}
 	localStorage.setItem("isMute", isMute);
 }

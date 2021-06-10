@@ -102,7 +102,7 @@ video {
 	font-size: 14px;
 	justify-content: end;
 	align-items: end;
-	width: 120px;
+	width: 140px;
 	bottom: 10px;
 	position: absolute;
 	left: 10px;
@@ -253,7 +253,7 @@ video {
 	flex-direction: column;
 	position: absolute;
 	bottom: 10px;
-	left: 130px;
+	left: 160px;
 	transition: height 0.4s ease-in-out 0s;
 }
 
@@ -307,6 +307,7 @@ video {
 }
 
 #searchInput {
+	cursor: pointer;
 	width: 5px;
 	box-sizing: border-box;
 	outline: none;
@@ -428,7 +429,7 @@ video {
 	width: 20px;
 	height: 20px;
 	position: absolute;
-	left: 170px;
+	left: 200px;
 	bottom: 10px;
 	display: flex;
 	justify-content: center;
@@ -479,6 +480,7 @@ video {
 	outline: none;
 	border: 0;
 }
+
 p {
 	font-weight: 600;
 }
@@ -488,8 +490,9 @@ p {
 	right: 200px;
 	bottom: 10px;
 }
+
 .open-file-btn {
-	left: 205px;
+	left: 240px;
 	bottom: 10px;
 	position: absolute;
 }

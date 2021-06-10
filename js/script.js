@@ -19,7 +19,7 @@ let isSettingVisible = false;
 let isPlaying = false;
 let isSeeking = false;
 let duration = "00:00:00";
-let timeDone = "00:00";
+let timeDone = "00:00:00";
 
 videoSlider.value = 0;
 videoSlider.step = 0.1;
