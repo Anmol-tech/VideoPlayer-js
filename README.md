@@ -34,7 +34,7 @@
 
 ## 🧐 About <a id = "about"></a>
 
-This player can play videos from Youtube, Twitch, daliymotion, etc. and you can search for your favorite Youtube directly in seach bar and play video quickly.
+This player can play videos from YouTube, Twitch, DailyMotion, etc. and you can search for your favorite YouTube directly in search bar and play video quickly.
 
 <!-- ## 🏁 Getting Started <a name = "getting_started"></a>
 
